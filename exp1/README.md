@@ -1,4 +1,4 @@
-# MouseNet: experiment design
+# MouseNet: experiment 1 design
 
 Working notes; update as the design develops. Design stage only: no training or
 model results yet.
