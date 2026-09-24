@@ -1,0 +1,19 @@
+{
+  "name": "hold_participant_fft",
+  "coordinate_resampling": "hold",
+  "fft_scaling_scope": "participant",
+  "encoder_inference": "stable modality embeddings applied along token axis; official checkpoint weights unchanged",
+  "fft_scaling_detail": "min-max separately per x/y axis across one completed participant session",
+  "mouse2vec_checkpoint_sha256": "3a24c19a7280e2f472240e12bb9de0c2ace91c1acf3f796908ceae19e83c5dff",
+  "n_participants": 74,
+  "n_windows": 26655,
+  "embedding_shape": [
+    26655,
+    128
+  ],
+  "class_counts": {
+    "0": 33,
+    "1": 41
+  },
+  "warning": "Participant-local scaling assumes all 20 TMT trials are available at prediction time. It never uses other participants or labels."
+}

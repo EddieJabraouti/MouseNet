@@ -1,0 +1,416 @@
+{
+  "protocol": "Fixed regularized models, same 5 participant-held-out folds; 20 ordered raw per-trial values per channel",
+  "feature_source": "Raw trial durations, raw coordinate path lengths, and button press counts; no Mouse2Vec input or embedding aggregation",
+  "n_participants": 74,
+  "n_features_raw60": 60,
+  "trial_audit_sha256": "bc494a313866e28f63fc50344fad67a527b5b67313279fea1cc374dcdf6543f6",
+  "demographics_sha256": "0caed661f2207ad1a97a6a4900e8f96c0b552896eaae1a4b094082f253b96ea8",
+  "model_settings": {
+    "logistic": "L2 C=0.1",
+    "rf": "300 trees, depth 3, >=8 people per leaf",
+    "xgb": "150 trees, depth 2, min_child_weight 2, gamma 0.5, lambda 10, alpha 1"
+  },
+  "final_models": "final_duration20_rf.joblib and final_duration20_xgb.joblib fitted on all 74 real participants after CV; exploratory candidates, not externally validated",
+  "summary": {
+    "duration20_logistic": {
+      "mean_fold_auroc": 0.6981481481481482,
+      "mean_fold_balanced_accuracy": 0.640079365079365,
+      "fold_aurocs": [
+        0.6071428571428571,
+        0.35714285714285715,
+        0.7857142857142857,
+        0.9074074074074074,
+        0.8333333333333334
+      ]
+    },
+    "duration20_rf": {
+      "mean_fold_auroc": 0.7615079365079365,
+      "mean_fold_balanced_accuracy": 0.6662698412698411,
+      "fold_aurocs": [
+        0.7678571428571429,
+        0.5178571428571428,
+        0.9107142857142857,
+        0.7777777777777778,
+        0.8333333333333334
+      ]
+    },
+    "duration20_xgb": {
+      "mean_fold_auroc": 0.7932539682539682,
+      "mean_fold_balanced_accuracy": 0.7009920634920634,
+      "fold_aurocs": [
+        0.8035714285714286,
+        0.5357142857142858,
+        0.9464285714285714,
+        0.888888888888889,
+        0.7916666666666666
+      ]
+    },
+    "duration20_demo_logistic": {
+      "mean_fold_auroc": 0.673611111111111,
+      "mean_fold_balanced_accuracy": 0.6418650793650794,
+      "fold_aurocs": [
+        0.5892857142857143,
+        0.35714285714285715,
+        0.6785714285714286,
+        0.888888888888889,
+        0.8541666666666667
+      ]
+    },
+    "duration20_demo_rf": {
+      "mean_fold_auroc": 0.7691798941798942,
+      "mean_fold_balanced_accuracy": 0.6686507936507937,
+      "fold_aurocs": [
+        0.75,
+        0.5357142857142858,
+        0.875,
+        0.8518518518518519,
+        0.8333333333333334
+      ]
+    },
+    "duration20_demo_xgb": {
+      "mean_fold_auroc": 0.7788359788359788,
+      "mean_fold_balanced_accuracy": 0.6954365079365079,
+      "fold_aurocs": [
+        0.7857142857142858,
+        0.5357142857142858,
+        0.9107142857142857,
+        0.8703703703703703,
+        0.7916666666666667
+      ]
+    },
+    "raw60_logistic": {
+      "mean_fold_auroc": 0.652579365079365,
+      "mean_fold_balanced_accuracy": 0.6291666666666667,
+      "fold_aurocs": [
+        0.6785714285714286,
+        0.4107142857142857,
+        0.625,
+        0.7777777777777778,
+        0.7708333333333333
+      ]
+    },
+    "raw60_rf": {
+      "mean_fold_auroc": 0.7361772486772488,
+      "mean_fold_balanced_accuracy": 0.6414682539682539,
+      "fold_aurocs": [
+        0.75,
+        0.42857142857142855,
+        0.875,
+        0.8148148148148149,
+        0.8125
+      ]
+    },
+    "raw60_xgb": {
+      "mean_fold_auroc": 0.778042328042328,
+      "mean_fold_balanced_accuracy": 0.6676587301587302,
+      "fold_aurocs": [
+        0.8392857142857143,
+        0.5357142857142857,
+        0.9642857142857143,
+        0.7592592592592592,
+        0.7916666666666667
+      ]
+    },
+    "raw60_demo_logistic": {
+      "mean_fold_auroc": 0.634589947089947,
+      "mean_fold_balanced_accuracy": 0.6166666666666666,
+      "fold_aurocs": [
+        0.6785714285714286,
+        0.375,
+        0.5892857142857143,
+        0.7592592592592593,
+        0.7708333333333333
+      ]
+    },
+    "raw60_demo_rf": {
+      "mean_fold_auroc": 0.7462962962962963,
+      "mean_fold_balanced_accuracy": 0.6432539682539682,
+      "fold_aurocs": [
+        0.7857142857142857,
+        0.4285714285714286,
+        0.9107142857142858,
+        0.8148148148148149,
+        0.7916666666666667
+      ]
+    },
+    "raw60_demo_xgb": {
+      "mean_fold_auroc": 0.79239417989418,
+      "mean_fold_balanced_accuracy": 0.6533730158730158,
+      "fold_aurocs": [
+        0.8928571428571428,
+        0.5178571428571429,
+        0.9285714285714286,
+        0.851851851851852,
+        0.7708333333333334
+      ]
+    }
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "models": {
+        "duration20_logistic": {
+          "auroc": 0.6071428571428571,
+          "balanced_accuracy": 0.7321428571428572
+        },
+        "duration20_rf": {
+          "auroc": 0.7678571428571429,
+          "balanced_accuracy": 0.6785714285714286
+        },
+        "duration20_xgb": {
+          "auroc": 0.8035714285714286,
+          "balanced_accuracy": 0.6785714285714286
+        },
+        "duration20_demo_logistic": {
+          "auroc": 0.5892857142857143,
+          "balanced_accuracy": 0.7321428571428572
+        },
+        "duration20_demo_rf": {
+          "auroc": 0.75,
+          "balanced_accuracy": 0.6785714285714286
+        },
+        "duration20_demo_xgb": {
+          "auroc": 0.7857142857142858,
+          "balanced_accuracy": 0.6785714285714286
+        },
+        "raw60_logistic": {
+          "auroc": 0.6785714285714286,
+          "balanced_accuracy": 0.6785714285714286
+        },
+        "raw60_rf": {
+          "auroc": 0.75,
+          "balanced_accuracy": 0.7410714285714286
+        },
+        "raw60_xgb": {
+          "auroc": 0.8392857142857143,
+          "balanced_accuracy": 0.6785714285714286
+        },
+        "raw60_demo_logistic": {
+          "auroc": 0.6785714285714286,
+          "balanced_accuracy": 0.6785714285714286
+        },
+        "raw60_demo_rf": {
+          "auroc": 0.7857142857142857,
+          "balanced_accuracy": 0.6785714285714286
+        },
+        "raw60_demo_xgb": {
+          "auroc": 0.8928571428571428,
+          "balanced_accuracy": 0.6785714285714286
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "models": {
+        "duration20_logistic": {
+          "auroc": 0.35714285714285715,
+          "balanced_accuracy": 0.33035714285714285
+        },
+        "duration20_rf": {
+          "auroc": 0.5178571428571428,
+          "balanced_accuracy": 0.5267857142857143
+        },
+        "duration20_xgb": {
+          "auroc": 0.5357142857142858,
+          "balanced_accuracy": 0.5892857142857143
+        },
+        "duration20_demo_logistic": {
+          "auroc": 0.35714285714285715,
+          "balanced_accuracy": 0.4017857142857143
+        },
+        "duration20_demo_rf": {
+          "auroc": 0.5357142857142858,
+          "balanced_accuracy": 0.4642857142857143
+        },
+        "duration20_demo_xgb": {
+          "auroc": 0.5357142857142858,
+          "balanced_accuracy": 0.5892857142857143
+        },
+        "raw60_logistic": {
+          "auroc": 0.4107142857142857,
+          "balanced_accuracy": 0.4107142857142857
+        },
+        "raw60_rf": {
+          "auroc": 0.42857142857142855,
+          "balanced_accuracy": 0.45535714285714285
+        },
+        "raw60_xgb": {
+          "auroc": 0.5357142857142857,
+          "balanced_accuracy": 0.5178571428571428
+        },
+        "raw60_demo_logistic": {
+          "auroc": 0.375,
+          "balanced_accuracy": 0.4107142857142857
+        },
+        "raw60_demo_rf": {
+          "auroc": 0.4285714285714286,
+          "balanced_accuracy": 0.45535714285714285
+        },
+        "raw60_demo_xgb": {
+          "auroc": 0.5178571428571429,
+          "balanced_accuracy": 0.5178571428571428
+        }
+      }
+    },
+    {
+      "fold": 3,
+      "models": {
+        "duration20_logistic": {
+          "auroc": 0.7857142857142857,
+          "balanced_accuracy": 0.6517857142857143
+        },
+        "duration20_rf": {
+          "auroc": 0.9107142857142857,
+          "balanced_accuracy": 0.7857142857142857
+        },
+        "duration20_xgb": {
+          "auroc": 0.9464285714285714,
+          "balanced_accuracy": 0.7857142857142857
+        },
+        "duration20_demo_logistic": {
+          "auroc": 0.6785714285714286,
+          "balanced_accuracy": 0.5892857142857143
+        },
+        "duration20_demo_rf": {
+          "auroc": 0.875,
+          "balanced_accuracy": 0.7142857142857143
+        },
+        "duration20_demo_xgb": {
+          "auroc": 0.9107142857142857,
+          "balanced_accuracy": 0.7857142857142857
+        },
+        "raw60_logistic": {
+          "auroc": 0.625,
+          "balanced_accuracy": 0.5982142857142857
+        },
+        "raw60_rf": {
+          "auroc": 0.875,
+          "balanced_accuracy": 0.6428571428571428
+        },
+        "raw60_xgb": {
+          "auroc": 0.9642857142857143,
+          "balanced_accuracy": 0.8571428571428572
+        },
+        "raw60_demo_logistic": {
+          "auroc": 0.5892857142857143,
+          "balanced_accuracy": 0.5357142857142857
+        },
+        "raw60_demo_rf": {
+          "auroc": 0.9107142857142858,
+          "balanced_accuracy": 0.7142857142857143
+        },
+        "raw60_demo_xgb": {
+          "auroc": 0.9285714285714286,
+          "balanced_accuracy": 0.7857142857142857
+        }
+      }
+    },
+    {
+      "fold": 4,
+      "models": {
+        "duration20_logistic": {
+          "auroc": 0.9074074074074074,
+          "balanced_accuracy": 0.7777777777777777
+        },
+        "duration20_rf": {
+          "auroc": 0.7777777777777778,
+          "balanced_accuracy": 0.6944444444444444
+        },
+        "duration20_xgb": {
+          "auroc": 0.888888888888889,
+          "balanced_accuracy": 0.8055555555555556
+        },
+        "duration20_demo_logistic": {
+          "auroc": 0.888888888888889,
+          "balanced_accuracy": 0.7777777777777777
+        },
+        "duration20_demo_rf": {
+          "auroc": 0.8518518518518519,
+          "balanced_accuracy": 0.7777777777777777
+        },
+        "duration20_demo_xgb": {
+          "auroc": 0.8703703703703703,
+          "balanced_accuracy": 0.7777777777777777
+        },
+        "raw60_logistic": {
+          "auroc": 0.7777777777777778,
+          "balanced_accuracy": 0.6666666666666666
+        },
+        "raw60_rf": {
+          "auroc": 0.8148148148148149,
+          "balanced_accuracy": 0.7222222222222222
+        },
+        "raw60_xgb": {
+          "auroc": 0.7592592592592592,
+          "balanced_accuracy": 0.6388888888888888
+        },
+        "raw60_demo_logistic": {
+          "auroc": 0.7592592592592593,
+          "balanced_accuracy": 0.6666666666666666
+        },
+        "raw60_demo_rf": {
+          "auroc": 0.8148148148148149,
+          "balanced_accuracy": 0.7222222222222222
+        },
+        "raw60_demo_xgb": {
+          "auroc": 0.851851851851852,
+          "balanced_accuracy": 0.6388888888888888
+        }
+      }
+    },
+    {
+      "fold": 5,
+      "models": {
+        "duration20_logistic": {
+          "auroc": 0.8333333333333334,
+          "balanced_accuracy": 0.7083333333333333
+        },
+        "duration20_rf": {
+          "auroc": 0.8333333333333334,
+          "balanced_accuracy": 0.6458333333333333
+        },
+        "duration20_xgb": {
+          "auroc": 0.7916666666666666,
+          "balanced_accuracy": 0.6458333333333333
+        },
+        "duration20_demo_logistic": {
+          "auroc": 0.8541666666666667,
+          "balanced_accuracy": 0.7083333333333333
+        },
+        "duration20_demo_rf": {
+          "auroc": 0.8333333333333334,
+          "balanced_accuracy": 0.7083333333333333
+        },
+        "duration20_demo_xgb": {
+          "auroc": 0.7916666666666667,
+          "balanced_accuracy": 0.6458333333333333
+        },
+        "raw60_logistic": {
+          "auroc": 0.7708333333333333,
+          "balanced_accuracy": 0.7916666666666667
+        },
+        "raw60_rf": {
+          "auroc": 0.8125,
+          "balanced_accuracy": 0.6458333333333333
+        },
+        "raw60_xgb": {
+          "auroc": 0.7916666666666667,
+          "balanced_accuracy": 0.6458333333333333
+        },
+        "raw60_demo_logistic": {
+          "auroc": 0.7708333333333333,
+          "balanced_accuracy": 0.7916666666666667
+        },
+        "raw60_demo_rf": {
+          "auroc": 0.7916666666666667,
+          "balanced_accuracy": 0.6458333333333333
+        },
+        "raw60_demo_xgb": {
+          "auroc": 0.7708333333333334,
+          "balanced_accuracy": 0.6458333333333333
+        }
+      }
+    }
+  ],
+  "caution": "Exploratory repeated use of the same cohort. Trial timing and click counts can be task-specific and should not be assumed present in ordinary mouse use."
+}

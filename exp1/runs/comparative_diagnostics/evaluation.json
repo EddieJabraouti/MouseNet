@@ -1,0 +1,46 @@
+{
+  "method": "Within each held-out fold, compare MCI/control prediction scores only for pairs whose ages differ by at most five years; no model fitting or tuning",
+  "results": {
+    "raw_duration20_rf": {
+      "correct_pairs": 76.0,
+      "total_pairs": 98,
+      "concordance": 0.7755102040816326
+    },
+    "raw_duration20_xgb": {
+      "correct_pairs": 77.0,
+      "total_pairs": 98,
+      "concordance": 0.7857142857142857
+    },
+    "raw60_rf": {
+      "correct_pairs": 68.0,
+      "total_pairs": 98,
+      "concordance": 0.6938775510204082
+    },
+    "raw60_xgb": {
+      "correct_pairs": 74.0,
+      "total_pairs": 98,
+      "concordance": 0.7551020408163265
+    },
+    "processed_combined_logistic": {
+      "correct_pairs": 68.0,
+      "total_pairs": 98,
+      "concordance": 0.6938775510204082
+    },
+    "stable_mouse_xgb_pls2_combined": {
+      "correct_pairs": 53.5,
+      "total_pairs": 98,
+      "concordance": 0.5459183673469388
+    },
+    "stable_mouse_rf_direct_mouse": {
+      "correct_pairs": 62.0,
+      "total_pairs": 98,
+      "concordance": 0.6326530612244898
+    },
+    "demographics_rf": {
+      "correct_pairs": 50.0,
+      "total_pairs": 98,
+      "concordance": 0.5102040816326531
+    }
+  },
+  "caution": "Pairs share participants and are correlated. These are post-hoc descriptive rankings on a reused cohort, not an age-matched external validation or independent sample size."
+}

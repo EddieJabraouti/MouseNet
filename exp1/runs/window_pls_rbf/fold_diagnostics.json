@@ -1,0 +1,972 @@
+{
+  "method": "Reproduce each original outer model; refit mouse-only and demographics-only SVMs at its selected parameters; compare post-classifier A/B scores and held-out participant composition.",
+  "caution": "All ablations were chosen after inspecting the original folds. They diagnose this split but are not independent performance estimates or causal attributions.",
+  "folds": [
+    {
+      "fold": 1,
+      "n_control": 7,
+      "n_mci": 8,
+      "selected_pls_components": 2,
+      "selected_C": 1.0,
+      "inner_mean_auroc": 0.5446127946127947,
+      "combined_auroc": 0.7857142857142857,
+      "combined_balanced_accuracy": 0.7232142857142857,
+      "correctly_ranked_control_mci_pairs": 44,
+      "total_control_mci_pairs": 56,
+      "remove_one_test_participant_auroc_range": [
+        0.75,
+        0.8541666666666667
+      ],
+      "mouse_only_auroc_posthoc": 0.4642857142857143,
+      "demographics_only_auroc_posthoc": 0.7321428571428571,
+      "demographic_block_neutralized_auroc_posthoc": 0.4285714285714286,
+      "mouse_block_neutralized_auroc_posthoc": 0.75,
+      "age_alone_auroc_descriptive": 0.8125,
+      "combined_part_A_auroc_posthoc": 0.8035714285714285,
+      "combined_part_B_auroc_posthoc": 0.7857142857142857,
+      "parameter_sensitivity_posthoc": [
+        {
+          "n_components": 2,
+          "C": 0.1,
+          "test_auroc_posthoc": 0.8214285714285714
+        },
+        {
+          "n_components": 2,
+          "C": 1.0,
+          "test_auroc_posthoc": 0.7857142857142857
+        },
+        {
+          "n_components": 4,
+          "C": 0.1,
+          "test_auroc_posthoc": 0.8214285714285714
+        },
+        {
+          "n_components": 4,
+          "C": 1.0,
+          "test_auroc_posthoc": 0.7857142857142857
+        },
+        {
+          "n_components": 8,
+          "C": 0.1,
+          "test_auroc_posthoc": 0.8035714285714285
+        },
+        {
+          "n_components": 8,
+          "C": 1.0,
+          "test_auroc_posthoc": 0.7678571428571429
+        }
+      ],
+      "fold1_fixed_score_bootstrap_95pct": [
+        0.5178571428571428,
+        0.9821428571428571
+      ],
+      "age_mean_by_group": {
+        "0": 67.0,
+        "1": 76.0
+      },
+      "education_mean_by_group": {
+        "0": 15.285714285714286,
+        "1": 14.0
+      },
+      "sex_code_1_rate_by_group": {
+        "0": 0.8571428571428571,
+        "1": 0.625
+      },
+      "windows_mean_by_group": {
+        "0": 339.57142857142856,
+        "1": 360.625
+      },
+      "score_mean_by_group": {
+        "0": 0.004755254708366479,
+        "1": 0.6177834679508027
+      },
+      "participants": [
+        {
+          "id": "16",
+          "group": 1,
+          "score": 0.8093221945964882,
+          "age": 76.0,
+          "education": 12.0,
+          "sex_code": 1,
+          "windows": 289
+        },
+        {
+          "id": "24",
+          "group": 1,
+          "score": 1.037838927133802,
+          "age": 73.0,
+          "education": 18.0,
+          "sex_code": 0,
+          "windows": 375
+        },
+        {
+          "id": "26",
+          "group": 0,
+          "score": -0.3191612792166918,
+          "age": 64.0,
+          "education": 18.0,
+          "sex_code": 0,
+          "windows": 348
+        },
+        {
+          "id": "28",
+          "group": 0,
+          "score": -0.8153983812635472,
+          "age": 63.0,
+          "education": 12.0,
+          "sex_code": 1,
+          "windows": 356
+        },
+        {
+          "id": "30",
+          "group": 0,
+          "score": 0.30909874805826276,
+          "age": 71.0,
+          "education": 18.0,
+          "sex_code": 1,
+          "windows": 335
+        },
+        {
+          "id": "36",
+          "group": 0,
+          "score": 0.7818532470285473,
+          "age": 58.0,
+          "education": 18.0,
+          "sex_code": 1,
+          "windows": 311
+        },
+        {
+          "id": "38",
+          "group": 0,
+          "score": -0.4117914792387811,
+          "age": 59.0,
+          "education": 15.0,
+          "sex_code": 1,
+          "windows": 275
+        },
+        {
+          "id": "40",
+          "group": 0,
+          "score": 0.8688669798825718,
+          "age": 78.0,
+          "education": 12.0,
+          "sex_code": 1,
+          "windows": 361
+        },
+        {
+          "id": "47",
+          "group": 1,
+          "score": 0.7407603975431539,
+          "age": 68.0,
+          "education": 18.0,
+          "sex_code": 0,
+          "windows": 333
+        },
+        {
+          "id": "50",
+          "group": 1,
+          "score": 0.668611734641947,
+          "age": 77.0,
+          "education": 7.0,
+          "sex_code": 1,
+          "windows": 407
+        },
+        {
+          "id": "58",
+          "group": 1,
+          "score": 0.9008830620846964,
+          "age": 76.0,
+          "education": 10.0,
+          "sex_code": 1,
+          "windows": 397
+        },
+        {
+          "id": "8",
+          "group": 1,
+          "score": -0.34217854546781323,
+          "age": 80.0,
+          "education": 17.0,
+          "sex_code": 0,
+          "windows": 315
+        },
+        {
+          "id": "84",
+          "group": 0,
+          "score": -0.38018105229179633,
+          "age": 76.0,
+          "education": 14.0,
+          "sex_code": 1,
+          "windows": 391
+        },
+        {
+          "id": "92",
+          "group": 1,
+          "score": 0.9629153633204568,
+          "age": 82.0,
+          "education": 12.0,
+          "sex_code": 1,
+          "windows": 361
+        },
+        {
+          "id": "94",
+          "group": 1,
+          "score": 0.16411460975369097,
+          "age": 76.0,
+          "education": 18.0,
+          "sex_code": 1,
+          "windows": 408
+        }
+      ]
+    },
+    {
+      "fold": 2,
+      "n_control": 7,
+      "n_mci": 8,
+      "selected_pls_components": 2,
+      "selected_C": 1.0,
+      "inner_mean_auroc": 0.44696969696969696,
+      "combined_auroc": 0.5357142857142857,
+      "combined_balanced_accuracy": 0.5892857142857143,
+      "correctly_ranked_control_mci_pairs": 30,
+      "total_control_mci_pairs": 56,
+      "remove_one_test_participant_auroc_range": [
+        0.47916666666666663,
+        0.625
+      ],
+      "mouse_only_auroc_posthoc": 0.6071428571428572,
+      "demographics_only_auroc_posthoc": 0.35714285714285715,
+      "demographic_block_neutralized_auroc_posthoc": 0.5357142857142857,
+      "mouse_block_neutralized_auroc_posthoc": 0.5357142857142857,
+      "age_alone_auroc_descriptive": 0.41964285714285715,
+      "combined_part_A_auroc_posthoc": 0.5357142857142857,
+      "combined_part_B_auroc_posthoc": 0.5357142857142857,
+      "parameter_sensitivity_posthoc": null,
+      "fold1_fixed_score_bootstrap_95pct": null,
+      "age_mean_by_group": {
+        "0": 75.57142857142857,
+        "1": 75.125
+      },
+      "education_mean_by_group": {
+        "0": 14.142857142857142,
+        "1": 14.0
+      },
+      "sex_code_1_rate_by_group": {
+        "0": 0.7142857142857143,
+        "1": 0.875
+      },
+      "windows_mean_by_group": {
+        "0": 352.85714285714283,
+        "1": 352.75
+      },
+      "score_mean_by_group": {
+        "0": -0.047275420651920017,
+        "1": 0.03455774473198095
+      },
+      "participants": [
+        {
+          "id": "17",
+          "group": 1,
+          "score": 0.5146001545392241,
+          "age": 73.0,
+          "education": 12.0,
+          "sex_code": 1,
+          "windows": 367
+        },
+        {
+          "id": "18",
+          "group": 0,
+          "score": -1.2918811231558789,
+          "age": 77.0,
+          "education": 17.0,
+          "sex_code": 1,
+          "windows": 342
+        },
+        {
+          "id": "19",
+          "group": 1,
+          "score": -4.316820092744307,
+          "age": 68.0,
+          "education": 7.0,
+          "sex_code": 1,
+          "windows": 386
+        },
+        {
+          "id": "2",
+          "group": 0,
+          "score": 0.20690349934133112,
+          "age": 78.0,
+          "education": 16.0,
+          "sex_code": 0,
+          "windows": 385
+        },
+        {
+          "id": "23",
+          "group": 0,
+          "score": 1.8437162174990809,
+          "age": 76.0,
+          "education": 10.0,
+          "sex_code": 1,
+          "windows": 363
+        },
+        {
+          "id": "27",
+          "group": 1,
+          "score": 0.755181511271121,
+          "age": 81.0,
+          "education": 18.0,
+          "sex_code": 1,
+          "windows": 379
+        },
+        {
+          "id": "31",
+          "group": 0,
+          "score": 1.0160226319230123,
+          "age": 79.0,
+          "education": 12.0,
+          "sex_code": 1,
+          "windows": 403
+        },
+        {
+          "id": "34",
+          "group": 0,
+          "score": 0.946799938610711,
+          "age": 77.0,
+          "education": 12.0,
+          "sex_code": 1,
+          "windows": 353
+        },
+        {
+          "id": "51",
+          "group": 1,
+          "score": 1.780203477106179,
+          "age": 85.0,
+          "education": 18.0,
+          "sex_code": 1,
+          "windows": 273
+        },
+        {
+          "id": "68",
+          "group": 1,
+          "score": 0.9831625177421073,
+          "age": 78.0,
+          "education": 12.0,
+          "sex_code": 1,
+          "windows": 338
+        },
+        {
+          "id": "87",
+          "group": 0,
+          "score": -1.1212393650085453,
+          "age": 80.0,
+          "education": 14.0,
+          "sex_code": 1,
+          "windows": 369
+        },
+        {
+          "id": "88",
+          "group": 1,
+          "score": 0.8103518148657571,
+          "age": 71.0,
+          "education": 18.0,
+          "sex_code": 0,
+          "windows": 378
+        },
+        {
+          "id": "89",
+          "group": 0,
+          "score": -1.931249743773151,
+          "age": 62.0,
+          "education": 18.0,
+          "sex_code": 0,
+          "windows": 255
+        },
+        {
+          "id": "97",
+          "group": 1,
+          "score": 0.7801341785191567,
+          "age": 75.0,
+          "education": 12.0,
+          "sex_code": 1,
+          "windows": 344
+        },
+        {
+          "id": "98",
+          "group": 1,
+          "score": -1.0303516034433906,
+          "age": 70.0,
+          "education": 15.0,
+          "sex_code": 1,
+          "windows": 357
+        }
+      ]
+    },
+    {
+      "fold": 3,
+      "n_control": 7,
+      "n_mci": 8,
+      "selected_pls_components": 4,
+      "selected_C": 0.1,
+      "inner_mean_auroc": 0.6683501683501684,
+      "combined_auroc": 0.2857142857142857,
+      "combined_balanced_accuracy": 0.33035714285714285,
+      "correctly_ranked_control_mci_pairs": 16,
+      "total_control_mci_pairs": 56,
+      "remove_one_test_participant_auroc_range": [
+        0.20408163265306123,
+        0.33333333333333337
+      ],
+      "mouse_only_auroc_posthoc": 0.3928571428571429,
+      "demographics_only_auroc_posthoc": 0.23214285714285715,
+      "demographic_block_neutralized_auroc_posthoc": 0.6428571428571428,
+      "mouse_block_neutralized_auroc_posthoc": 0.30357142857142855,
+      "age_alone_auroc_descriptive": 0.5714285714285714,
+      "combined_part_A_auroc_posthoc": 0.2857142857142857,
+      "combined_part_B_auroc_posthoc": 0.2857142857142857,
+      "parameter_sensitivity_posthoc": [
+        {
+          "n_components": 2,
+          "C": 0.1,
+          "test_auroc_posthoc": 0.2857142857142857
+        },
+        {
+          "n_components": 2,
+          "C": 1.0,
+          "test_auroc_posthoc": 0.23214285714285715
+        },
+        {
+          "n_components": 4,
+          "C": 0.1,
+          "test_auroc_posthoc": 0.2857142857142857
+        },
+        {
+          "n_components": 4,
+          "C": 1.0,
+          "test_auroc_posthoc": 0.2142857142857143
+        },
+        {
+          "n_components": 8,
+          "C": 0.1,
+          "test_auroc_posthoc": 0.2857142857142857
+        },
+        {
+          "n_components": 8,
+          "C": 1.0,
+          "test_auroc_posthoc": 0.23214285714285715
+        }
+      ],
+      "fold1_fixed_score_bootstrap_95pct": null,
+      "age_mean_by_group": {
+        "0": 75.85714285714286,
+        "1": 78.25
+      },
+      "education_mean_by_group": {
+        "0": 13.285714285714286,
+        "1": 11.625
+      },
+      "sex_code_1_rate_by_group": {
+        "0": 0.5714285714285714,
+        "1": 1.0
+      },
+      "windows_mean_by_group": {
+        "0": 361.85714285714283,
+        "1": 386.375
+      },
+      "score_mean_by_group": {
+        "0": 0.7932064799437599,
+        "1": 0.036535651721719575
+      },
+      "participants": [
+        {
+          "id": "100",
+          "group": 0,
+          "score": 1.499810142089106,
+          "age": 76.0,
+          "education": 18.0,
+          "sex_code": 0,
+          "windows": 380
+        },
+        {
+          "id": "12",
+          "group": 1,
+          "score": -0.28075708630391505,
+          "age": 82.0,
+          "education": 12.0,
+          "sex_code": 1,
+          "windows": 417
+        },
+        {
+          "id": "14",
+          "group": 0,
+          "score": -0.23122361249178525,
+          "age": 67.0,
+          "education": 12.0,
+          "sex_code": 0,
+          "windows": 300
+        },
+        {
+          "id": "15",
+          "group": 1,
+          "score": -0.9185897488171184,
+          "age": 78.0,
+          "education": 12.0,
+          "sex_code": 1,
+          "windows": 413
+        },
+        {
+          "id": "21",
+          "group": 0,
+          "score": -0.7926611056313222,
+          "age": 67.0,
+          "education": 12.0,
+          "sex_code": 1,
+          "windows": 353
+        },
+        {
+          "id": "29",
+          "group": 0,
+          "score": 0.7652837987930171,
+          "age": 65.0,
+          "education": 18.0,
+          "sex_code": 1,
+          "windows": 378
+        },
+        {
+          "id": "42",
+          "group": 1,
+          "score": -0.8979983468002302,
+          "age": 71.0,
+          "education": 12.0,
+          "sex_code": 1,
+          "windows": 355
+        },
+        {
+          "id": "45",
+          "group": 1,
+          "score": -0.984084238261719,
+          "age": 77.0,
+          "education": 12.0,
+          "sex_code": 1,
+          "windows": 412
+        },
+        {
+          "id": "5",
+          "group": 1,
+          "score": 1.9422024878908821,
+          "age": 87.0,
+          "education": 10.0,
+          "sex_code": 1,
+          "windows": 419
+        },
+        {
+          "id": "57",
+          "group": 1,
+          "score": 1.9947913977873186,
+          "age": 84.0,
+          "education": 7.0,
+          "sex_code": 1,
+          "windows": 388
+        },
+        {
+          "id": "79",
+          "group": 0,
+          "score": 0.9662731889337689,
+          "age": 80.0,
+          "education": 12.0,
+          "sex_code": 0,
+          "windows": 373
+        },
+        {
+          "id": "82",
+          "group": 1,
+          "score": 0.04450681819911173,
+          "age": 83.0,
+          "education": 12.0,
+          "sex_code": 1,
+          "windows": 353
+        },
+        {
+          "id": "85",
+          "group": 0,
+          "score": 0.38443644722102954,
+          "age": 86.0,
+          "education": 14.0,
+          "sex_code": 1,
+          "windows": 377
+        },
+        {
+          "id": "9",
+          "group": 1,
+          "score": -0.6077860699205733,
+          "age": 64.0,
+          "education": 16.0,
+          "sex_code": 1,
+          "windows": 334
+        },
+        {
+          "id": "91",
+          "group": 0,
+          "score": 2.9605265006925054,
+          "age": 90.0,
+          "education": 7.0,
+          "sex_code": 1,
+          "windows": 372
+        }
+      ]
+    },
+    {
+      "fold": 4,
+      "n_control": 6,
+      "n_mci": 9,
+      "selected_pls_components": 2,
+      "selected_C": 0.1,
+      "inner_mean_auroc": 0.4481481481481482,
+      "combined_auroc": 0.6666666666666667,
+      "combined_balanced_accuracy": 0.6666666666666666,
+      "correctly_ranked_control_mci_pairs": 36,
+      "total_control_mci_pairs": 54,
+      "remove_one_test_participant_auroc_range": [
+        0.6,
+        0.8
+      ],
+      "mouse_only_auroc_posthoc": 0.5555555555555556,
+      "demographics_only_auroc_posthoc": 0.5277777777777778,
+      "demographic_block_neutralized_auroc_posthoc": 0.5185185185185186,
+      "mouse_block_neutralized_auroc_posthoc": 0.6574074074074074,
+      "age_alone_auroc_descriptive": 0.7037037037037037,
+      "combined_part_A_auroc_posthoc": 0.6666666666666667,
+      "combined_part_B_auroc_posthoc": 0.6666666666666667,
+      "parameter_sensitivity_posthoc": null,
+      "fold1_fixed_score_bootstrap_95pct": null,
+      "age_mean_by_group": {
+        "0": 72.66666666666667,
+        "1": 77.77777777777777
+      },
+      "education_mean_by_group": {
+        "0": 13.666666666666666,
+        "1": 14.88888888888889
+      },
+      "sex_code_1_rate_by_group": {
+        "0": 0.8333333333333334,
+        "1": 0.5555555555555556
+      },
+      "windows_mean_by_group": {
+        "0": 346.0,
+        "1": 385.55555555555554
+      },
+      "score_mean_by_group": {
+        "0": -0.2741725410150046,
+        "1": 0.18613586149368494
+      },
+      "participants": [
+        {
+          "id": "101",
+          "group": 0,
+          "score": -0.5319677901953433,
+          "age": 71.0,
+          "education": 18.0,
+          "sex_code": 1,
+          "windows": 333
+        },
+        {
+          "id": "11",
+          "group": 1,
+          "score": 1.0431072437187556,
+          "age": 74.0,
+          "education": 18.0,
+          "sex_code": 0,
+          "windows": 394
+        },
+        {
+          "id": "13",
+          "group": 1,
+          "score": -0.8620143721439724,
+          "age": 84.0,
+          "education": 13.0,
+          "sex_code": 0,
+          "windows": 371
+        },
+        {
+          "id": "20",
+          "group": 1,
+          "score": 0.5808715834821128,
+          "age": 78.0,
+          "education": 7.0,
+          "sex_code": 0,
+          "windows": 411
+        },
+        {
+          "id": "22",
+          "group": 0,
+          "score": 0.8988866556009012,
+          "age": 81.0,
+          "education": 12.0,
+          "sex_code": 1,
+          "windows": 375
+        },
+        {
+          "id": "35",
+          "group": 0,
+          "score": -1.0519585270873235,
+          "age": 79.0,
+          "education": 15.0,
+          "sex_code": 1,
+          "windows": 344
+        },
+        {
+          "id": "46",
+          "group": 1,
+          "score": 0.5576687429897527,
+          "age": 86.0,
+          "education": 12.0,
+          "sex_code": 1,
+          "windows": 415
+        },
+        {
+          "id": "48",
+          "group": 1,
+          "score": -0.7592348429079381,
+          "age": 61.0,
+          "education": 18.0,
+          "sex_code": 1,
+          "windows": 404
+        },
+        {
+          "id": "6",
+          "group": 0,
+          "score": -2.294163765937521,
+          "age": 61.0,
+          "education": 13.0,
+          "sex_code": 0,
+          "windows": 304
+        },
+        {
+          "id": "64",
+          "group": 1,
+          "score": 0.41205467801749346,
+          "age": 82.0,
+          "education": 18.0,
+          "sex_code": 1,
+          "windows": 325
+        },
+        {
+          "id": "66",
+          "group": 1,
+          "score": 1.0432843635825497,
+          "age": 74.0,
+          "education": 18.0,
+          "sex_code": 0,
+          "windows": 402
+        },
+        {
+          "id": "77",
+          "group": 1,
+          "score": 0.17850913764626258,
+          "age": 90.0,
+          "education": 12.0,
+          "sex_code": 1,
+          "windows": 420
+        },
+        {
+          "id": "78",
+          "group": 0,
+          "score": -1.1433055683585989,
+          "age": 70.0,
+          "education": 15.0,
+          "sex_code": 1,
+          "windows": 339
+        },
+        {
+          "id": "83",
+          "group": 0,
+          "score": 2.4774737498878583,
+          "age": 74.0,
+          "education": 9.0,
+          "sex_code": 1,
+          "windows": 381
+        },
+        {
+          "id": "99",
+          "group": 1,
+          "score": -0.5190237809418518,
+          "age": 71.0,
+          "education": 18.0,
+          "sex_code": 1,
+          "windows": 328
+        }
+      ]
+    },
+    {
+      "fold": 5,
+      "n_control": 6,
+      "n_mci": 8,
+      "selected_pls_components": 2,
+      "selected_C": 1.0,
+      "inner_mean_auroc": 0.5117845117845118,
+      "combined_auroc": 0.7291666666666666,
+      "combined_balanced_accuracy": 0.75,
+      "correctly_ranked_control_mci_pairs": 35,
+      "total_control_mci_pairs": 48,
+      "remove_one_test_participant_auroc_range": [
+        0.6904761904761905,
+        0.8333333333333334
+      ],
+      "mouse_only_auroc_posthoc": 0.5416666666666667,
+      "demographics_only_auroc_posthoc": 0.5833333333333334,
+      "demographic_block_neutralized_auroc_posthoc": 0.6666666666666667,
+      "mouse_block_neutralized_auroc_posthoc": 0.7291666666666667,
+      "age_alone_auroc_descriptive": 0.48958333333333337,
+      "combined_part_A_auroc_posthoc": 0.7291666666666666,
+      "combined_part_B_auroc_posthoc": 0.7291666666666666,
+      "parameter_sensitivity_posthoc": null,
+      "fold1_fixed_score_bootstrap_95pct": null,
+      "age_mean_by_group": {
+        "0": 72.33333333333333,
+        "1": 72.375
+      },
+      "education_mean_by_group": {
+        "0": 14.333333333333334,
+        "1": 14.5
+      },
+      "sex_code_1_rate_by_group": {
+        "0": 0.8333333333333334,
+        "1": 0.625
+      },
+      "windows_mean_by_group": {
+        "0": 332.0,
+        "1": 367.375
+      },
+      "score_mean_by_group": {
+        "0": -1.5463411312149455,
+        "1": -0.5909998822906755
+      },
+      "participants": [
+        {
+          "id": "10",
+          "group": 0,
+          "score": -1.5219107664851625,
+          "age": 81.0,
+          "education": 15.0,
+          "sex_code": 1,
+          "windows": 301
+        },
+        {
+          "id": "3",
+          "group": 1,
+          "score": -0.44239392521685195,
+          "age": 68.0,
+          "education": 12.0,
+          "sex_code": 1,
+          "windows": 398
+        },
+        {
+          "id": "39",
+          "group": 0,
+          "score": -3.151731672199311,
+          "age": 69.0,
+          "education": 14.0,
+          "sex_code": 0,
+          "windows": 325
+        },
+        {
+          "id": "41",
+          "group": 0,
+          "score": -1.546673562425815,
+          "age": 57.0,
+          "education": 15.0,
+          "sex_code": 1,
+          "windows": 282
+        },
+        {
+          "id": "49",
+          "group": 1,
+          "score": 1.0949363708782527,
+          "age": 76.0,
+          "education": 18.0,
+          "sex_code": 0,
+          "windows": 420
+        },
+        {
+          "id": "53",
+          "group": 1,
+          "score": 1.0311894269932298,
+          "age": 84.0,
+          "education": 12.0,
+          "sex_code": 1,
+          "windows": 306
+        },
+        {
+          "id": "54",
+          "group": 1,
+          "score": -1.8678340166183158,
+          "age": 57.0,
+          "education": 20.0,
+          "sex_code": 1,
+          "windows": 350
+        },
+        {
+          "id": "60",
+          "group": 1,
+          "score": -1.0723271424193468,
+          "age": 67.0,
+          "education": 18.0,
+          "sex_code": 1,
+          "windows": 374
+        },
+        {
+          "id": "62",
+          "group": 1,
+          "score": 0.21070025057731814,
+          "age": 75.0,
+          "education": 12.0,
+          "sex_code": 1,
+          "windows": 400
+        },
+        {
+          "id": "69",
+          "group": 1,
+          "score": 0.1696320043138539,
+          "age": 82.0,
+          "education": 12.0,
+          "sex_code": 0,
+          "windows": 397
+        },
+        {
+          "id": "70",
+          "group": 0,
+          "score": -0.22601293436480435,
+          "age": 70.0,
+          "education": 12.0,
+          "sex_code": 1,
+          "windows": 294
+        },
+        {
+          "id": "86",
+          "group": 0,
+          "score": -1.5138279959089918,
+          "age": 81.0,
+          "education": 15.0,
+          "sex_code": 1,
+          "windows": 408
+        },
+        {
+          "id": "93",
+          "group": 1,
+          "score": -3.851902026833543,
+          "age": 70.0,
+          "education": 12.0,
+          "sex_code": 0,
+          "windows": 294
+        },
+        {
+          "id": "95",
+          "group": 0,
+          "score": -1.3178898559055878,
+          "age": 76.0,
+          "education": 15.0,
+          "sex_code": 1,
+          "windows": 382
+        }
+      ]
+    }
+  ]
+}

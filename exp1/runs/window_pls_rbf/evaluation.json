@@ -1,0 +1,115 @@
+{
+  "pipeline": "each frozen 128D Mouse2Vec window embedding -> fold-fitted PLS -> RBF SVM; demographics join after PLS",
+  "embedding_aggregation": "none before PLS or SVM",
+  "participant_score": "median of post-classifier window decision scores; zero is the decision threshold",
+  "validation": "outer stratified 5-fold by participant; inner stratified 3-fold by participant; inner selection uses mean validation-fold participant AUROC",
+  "model_selection": {
+    "components": [
+      2,
+      4,
+      8
+    ],
+    "C": [
+      0.1,
+      1.0
+    ],
+    "gamma": "scale"
+  },
+  "n_participants": 74,
+  "n_windows": 26655,
+  "class_counts": {
+    "0": 33,
+    "1": 41
+  },
+  "mean_fold_auroc": 0.6005952380952381,
+  "mean_fold_balanced_accuracy": 0.6119047619047618,
+  "pooled_oof_auroc_descriptive": 0.5868440502586845,
+  "pooled_oof_balanced_accuracy": 0.6049519586104952,
+  "folds": [
+    {
+      "fold": 1,
+      "n_test_participants": 15,
+      "n_components": 2,
+      "C": 1.0,
+      "inner_mean_auroc": 0.5446127946127947,
+      "test_auroc": 0.7857142857142857,
+      "test_balanced_accuracy": 0.7232142857142857
+    },
+    {
+      "fold": 2,
+      "n_test_participants": 15,
+      "n_components": 2,
+      "C": 1.0,
+      "inner_mean_auroc": 0.44696969696969696,
+      "test_auroc": 0.5357142857142857,
+      "test_balanced_accuracy": 0.5892857142857143
+    },
+    {
+      "fold": 3,
+      "n_test_participants": 15,
+      "n_components": 4,
+      "C": 0.1,
+      "inner_mean_auroc": 0.6683501683501684,
+      "test_auroc": 0.2857142857142857,
+      "test_balanced_accuracy": 0.33035714285714285
+    },
+    {
+      "fold": 4,
+      "n_test_participants": 15,
+      "n_components": 2,
+      "C": 0.1,
+      "inner_mean_auroc": 0.4481481481481482,
+      "test_auroc": 0.6666666666666667,
+      "test_balanced_accuracy": 0.6666666666666666
+    },
+    {
+      "fold": 5,
+      "n_test_participants": 14,
+      "n_components": 2,
+      "C": 1.0,
+      "inner_mean_auroc": 0.5117845117845118,
+      "test_auroc": 0.7291666666666666,
+      "test_balanced_accuracy": 0.75
+    }
+  ],
+  "final_parameters": {
+    "n_components": 2,
+    "C": 1.0,
+    "inner_mean_auroc": 0.6272061272061272
+  },
+  "final_inner_search": [
+    {
+      "n_components": 2,
+      "C": 0.1,
+      "inner_mean_auroc": 0.5171495171495172
+    },
+    {
+      "n_components": 2,
+      "C": 1.0,
+      "inner_mean_auroc": 0.6272061272061272
+    },
+    {
+      "n_components": 4,
+      "C": 0.1,
+      "inner_mean_auroc": 0.5128205128205128
+    },
+    {
+      "n_components": 4,
+      "C": 1.0,
+      "inner_mean_auroc": 0.6008991008991008
+    },
+    {
+      "n_components": 8,
+      "C": 0.1,
+      "inner_mean_auroc": 0.5173160173160173
+    },
+    {
+      "n_components": 8,
+      "C": 1.0,
+      "inner_mean_auroc": 0.5794205794205795
+    }
+  ],
+  "mouse_features_sha256": "1dc0689e1e28d76d323b001cb58b74cf0476d495b3d48aa7476d0241c640e26e",
+  "demographics_sha256": "0caed661f2207ad1a97a6a4900e8f96c0b552896eaae1a4b094082f253b96ea8",
+  "limitations": "PLS treats windows as separate labeled observations and does not model their order across windows. Training weights keep participant influence equal in the SVM, but PLS itself is fitted on every training window without participant weights. No independent test cohort."
+}

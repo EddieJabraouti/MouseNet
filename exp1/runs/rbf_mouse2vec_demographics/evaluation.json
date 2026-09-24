@@ -1,0 +1,66 @@
+{
+  "protocol": "outer leave-one-participant-out; inner stratified 10-fold AUROC tuning",
+  "model": "class-balanced RBF SVM with fold-local block standardization and sigmoid calibration",
+  "feature_definition": "256 Mouse2Vec A/B summary features plus sex, age, years of education; each standardized block weighted by inverse square root of its feature count",
+  "selection": "C in [0.1, 1, 10, 100] and gamma in [0.1, 1, 10] selected on inner folds only",
+  "calibration": "5-fold stratified sigmoid calibration fitted on each outer training set only, after inner C/gamma selection",
+  "decision_threshold": 0.5,
+  "mouse_features_sha256": "3d5ca1295e7a0a348d15a9c77a3ae529d54e1a467a20996c33eaabc1a2980f62",
+  "demographics_sha256": "0caed661f2207ad1a97a6a4900e8f96c0b552896eaae1a4b094082f253b96ea8",
+  "n_participants": 74,
+  "class_counts": {
+    "0": 33,
+    "1": 41
+  },
+  "auroc": 0.2749445676274944,
+  "auroc_bootstrap_95pct": [
+    0.1662971175166297,
+    0.3910014781966
+  ],
+  "balanced_accuracy": 0.4541759053954176,
+  "balanced_accuracy_bootstrap_95pct": [
+    0.40228196600147825,
+    0.508869179600887
+  ],
+  "sensitivity": 0.8780487804878049,
+  "specificity": 0.030303030303030276,
+  "brier_score": 0.2694215924887029,
+  "final_model_C": 0.1,
+  "final_model_gamma": 0.1,
+  "bootstrap_note": "Stratified participant bootstrap of fixed out-of-fold predictions; excludes model-refit uncertainty.",
+  "validation_note": "Internal nested cross-validation; no independent external test cohort.",
+  "fivefold_sensitivity": {
+    "protocol": "five repeats of outer stratified 5-fold; inner stratified 5-fold C/gamma search; training-fold-only 5-fold calibration",
+    "results": [
+      {
+        "seed": 42,
+        "auroc": 0.49741315594974134,
+        "balanced_accuracy": 0.475240206947524
+      },
+      {
+        "seed": 43,
+        "auroc": 0.4575018477457502,
+        "balanced_accuracy": 0.5025868440502587
+      },
+      {
+        "seed": 44,
+        "auroc": 0.45011086474501105,
+        "balanced_accuracy": 0.5147819660014782
+      },
+      {
+        "seed": 45,
+        "auroc": 0.48928307464892834,
+        "balanced_accuracy": 0.4815225424981523
+      },
+      {
+        "seed": 46,
+        "auroc": 0.393939393939394,
+        "balanced_accuracy": 0.4478935698447894
+      }
+    ],
+    "mean_auroc": 0.45764966740576496,
+    "mean_balanced_accuracy": 0.4844050258684405,
+    "note": "Exploratory sensitivity check prompted by LOOCV score behavior; repeats reuse the same participants and are not independent validation cohorts."
+  },
+  "numeric_note": "macOS Accelerate matmul warnings filtered after finite-input and explicit-dot agreement checks."
+}

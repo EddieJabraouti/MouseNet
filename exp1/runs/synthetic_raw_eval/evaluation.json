@@ -1,0 +1,130 @@
+{
+  "protocol": "Same 5 real-participant outer folds; 2 synthetic descendants per training source only; every real source lineage equal total sample weight; RF leaf size scaled by replica count",
+  "n_real_participants": 74,
+  "n_synthetic_profiles": 148,
+  "synthetic_raw_sha256": "aba37b9265a1862f7bfc48dff52dd538fc4dbd68e0a27f81c2e332707e470b35",
+  "demographics_sha256": "0caed661f2207ad1a97a6a4900e8f96c0b552896eaae1a4b094082f253b96ea8",
+  "summary": {
+    "duration20": {
+      "mean_fold_auroc": 0.7838624338624339,
+      "mean_fold_balanced_accuracy": 0.6561507936507937,
+      "fold_aurocs": [
+        0.8214285714285714,
+        0.4285714285714286,
+        0.9285714285714286,
+        0.9074074074074074,
+        0.8333333333333334
+      ]
+    },
+    "raw60": {
+      "mean_fold_auroc": 0.7346560846560847,
+      "mean_fold_balanced_accuracy": 0.6450396825396826,
+      "fold_aurocs": [
+        0.8392857142857143,
+        0.375,
+        0.8571428571428571,
+        0.8518518518518519,
+        0.75
+      ]
+    },
+    "raw60_demo": {
+      "mean_fold_auroc": 0.7282407407407406,
+      "mean_fold_balanced_accuracy": 0.6593253968253968,
+      "fold_aurocs": [
+        0.7857142857142857,
+        0.35714285714285715,
+        0.8571428571428572,
+        0.8703703703703703,
+        0.7708333333333333
+      ]
+    }
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "models": {
+        "duration20": {
+          "auroc": 0.8214285714285714,
+          "balanced_accuracy": 0.7410714285714286
+        },
+        "raw60": {
+          "auroc": 0.8392857142857143,
+          "balanced_accuracy": 0.8125
+        },
+        "raw60_demo": {
+          "auroc": 0.7857142857142857,
+          "balanced_accuracy": 0.8125
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "models": {
+        "duration20": {
+          "auroc": 0.4285714285714286,
+          "balanced_accuracy": 0.4642857142857143
+        },
+        "raw60": {
+          "auroc": 0.375,
+          "balanced_accuracy": 0.39285714285714285
+        },
+        "raw60_demo": {
+          "auroc": 0.35714285714285715,
+          "balanced_accuracy": 0.39285714285714285
+        }
+      }
+    },
+    {
+      "fold": 3,
+      "models": {
+        "duration20": {
+          "auroc": 0.9285714285714286,
+          "balanced_accuracy": 0.6517857142857143
+        },
+        "raw60": {
+          "auroc": 0.8571428571428571,
+          "balanced_accuracy": 0.6517857142857143
+        },
+        "raw60_demo": {
+          "auroc": 0.8571428571428572,
+          "balanced_accuracy": 0.7232142857142857
+        }
+      }
+    },
+    {
+      "fold": 4,
+      "models": {
+        "duration20": {
+          "auroc": 0.9074074074074074,
+          "balanced_accuracy": 0.7777777777777777
+        },
+        "raw60": {
+          "auroc": 0.8518518518518519,
+          "balanced_accuracy": 0.7222222222222222
+        },
+        "raw60_demo": {
+          "auroc": 0.8703703703703703,
+          "balanced_accuracy": 0.7222222222222222
+        }
+      }
+    },
+    {
+      "fold": 5,
+      "models": {
+        "duration20": {
+          "auroc": 0.8333333333333334,
+          "balanced_accuracy": 0.6458333333333333
+        },
+        "raw60": {
+          "auroc": 0.75,
+          "balanced_accuracy": 0.6458333333333333
+        },
+        "raw60_demo": {
+          "auroc": 0.7708333333333333,
+          "balanced_accuracy": 0.6458333333333333
+        }
+      }
+    }
+  ],
+  "caution": "Only real unseen participants are scored. Synthetic descendants are not independent observations or independent labels."
+}

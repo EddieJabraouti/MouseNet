@@ -1,0 +1,20 @@
+{
+  "n_synthetic_trials": 2960,
+  "n_synthetic_profiles": 148,
+  "all_demographics_within_bounds": true,
+  "all_labels_and_sex_match_source": true,
+  "all_timestamps_increasing": true,
+  "all_coordinates_in_screen": true,
+  "all_click_counts_match_source": true,
+  "duration_ratio_min_median_max": [
+    0.9800181984901428,
+    0.9998560547828674,
+    1.0199936628341675
+  ],
+  "path_ratio_min_median_max": [
+    1.0019016514632606,
+    1.0140214812718025,
+    1.0621278494940185
+  ],
+  "warning": "Small perturbations preserve mechanics, but plausible-looking synthetic data do not create independent cognitive labels or guarantee clinical fidelity."
+}

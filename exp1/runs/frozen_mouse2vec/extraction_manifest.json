@@ -1,0 +1,46 @@
+{
+  "checkpoint": "mouse2vec/Mouse2Vec/pretrained_model.pkl",
+  "checkpoint_sha256": "3a24c19a7280e2f472240e12bb9de0c2ace91c1acf3f796908ceae19e83c5dff",
+  "encoder_trainable": false,
+  "sample_hz": 20,
+  "window_seconds": 5,
+  "stride_seconds": 1,
+  "coordinate_transform": "PsychoPy height 16:9 to Mouse2Vec [0,1], y down",
+  "frequency_scaling": "per-window, per-axis min-max of FFT magnitude and phase",
+  "participants": 74,
+  "class_counts": {
+    "0": 33,
+    "1": 41
+  },
+  "experimental_trials": 1480,
+  "windows": 26655,
+  "embedding_dim": 128,
+  "participant_feature_dim": 256,
+  "internal_id_mismatches": [
+    {
+      "file_id": "17",
+      "internal_id": "16",
+      "file": "17_experimento_condicion_1_2024-02-19_17h06.14.223.csv"
+    },
+    {
+      "file_id": "78",
+      "internal_id": "79",
+      "file": "78_experimento_condicion_1_2024-06-24_15h09.16.269.csv"
+    },
+    {
+      "file_id": "79",
+      "internal_id": "80",
+      "file": "79_experimento_condicion_1_2024-06-24_15h31.40.395.csv"
+    },
+    {
+      "file_id": "92",
+      "internal_id": "91 bis",
+      "file": "92_experimento_condicion_1_2024-08-05_14h02.54.146.csv"
+    },
+    {
+      "file_id": "98",
+      "internal_id": "98ult",
+      "file": "98_experimento_condicion_1_2024-10-21_13h16.08.457.csv"
+    }
+  ]
+}

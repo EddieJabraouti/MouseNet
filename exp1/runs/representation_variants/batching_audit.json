@@ -1,0 +1,18 @@
+{
+  "source_code_location": "mouse2vec/Mouse2Vec/CRT.py TFR.forward: x[:m_token_idx], x[m_token_idx:p_token_idx], x[p_token_idx:] slice batch axis; intended operation slices token axis",
+  "repeated_identical_input_count": 64,
+  "legacy_batch_position_max_abs_difference": 5.754472255706787,
+  "corrected_batch_position_max_abs_difference": 0.0,
+  "n_aligned_real_windows": 26655,
+  "old_vs_corrected_cosine_similarity_quantiles": [
+    0.42200374603271484,
+    0.6105751156806946,
+    0.7089666128158569,
+    0.745588767528534,
+    0.7924096584320068
+  ],
+  "legacy_embeddings_sha256": "1dc0689e1e28d76d323b001cb58b74cf0476d495b3d48aa7476d0241c640e26e",
+  "corrected_embeddings_sha256": "39b563a51206ed61005cd33644103d500d9f76d44932daef0ed79cb85de302c6",
+  "checkpoint_unchanged": true,
+  "caution": "Corrected inference restores batch-position invariance but changes the representation relative to the released code; pretraining may itself have used the same defect. Downstream models must be refit and evaluated independently on corrected embeddings."
+}

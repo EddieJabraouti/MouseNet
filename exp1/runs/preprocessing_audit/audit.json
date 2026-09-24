@@ -1,0 +1,68 @@
+{
+  "n_participants": 74,
+  "n_trials": 1480,
+  "raw_sample_rate_hz": {
+    "min": 29.993281530596114,
+    "median": 30.000795051570414,
+    "p90": 30.00255031303586,
+    "max": 30.00867243961996
+  },
+  "raw_sample_count": {
+    "min": 371.0,
+    "median": 747.0,
+    "p90": 756.0,
+    "max": 811.0
+  },
+  "trial_duration_s": {
+    "min": 12.149863700033166,
+    "median": 24.992772049969062,
+    "p90": 25.01786482001189,
+    "max": 25.965647399891168
+  },
+  "hold_path_fraction": {
+    "min": 0.8581910212754804,
+    "median": 0.9938434835952495,
+    "p90": 0.9969264769856826,
+    "max": 0.9986898326994208
+  },
+  "linear_path_fraction": {
+    "min": 0.9592521096982302,
+    "median": 0.993283724856785,
+    "p90": 0.995860023862296,
+    "max": 0.9977849992307111
+  },
+  "raw_stationary_fraction": {
+    "min": 0.12570356472795496,
+    "median": 0.44406095791001454,
+    "p90": 0.6110396644630856,
+    "max": 0.7705570291777188
+  },
+  "hold_stationary_fraction": {
+    "min": 0.10140845070422536,
+    "median": 0.41359401130843354,
+    "p90": 0.58,
+    "max": 0.749498997995992
+  },
+  "clicks": {
+    "min": 0.0,
+    "median": 0.0,
+    "p90": 2.0,
+    "max": 16.0
+  },
+  "trials_with_clicks": 686,
+  "path_spearman_raw_vs_hold": 0.9996142539154567,
+  "path_spearman_raw_vs_linear": 0.9998039342776536,
+  "descriptive_participant_auc_from_trial_medians": {
+    "A_duration_s": 0.6393200295639321,
+    "A_raw_path": 0.557280118255728,
+    "A_hold_path": 0.5550628233555063,
+    "A_linear_path": 0.5565410199556541,
+    "A_clicks": 0.5439763488543976,
+    "B_duration_s": 0.6607538802660754,
+    "B_raw_path": 0.4575018477457502,
+    "B_hold_path": 0.4552845528455285,
+    "B_linear_path": 0.4552845528455285,
+    "B_clicks": 0.5214338507021433
+  },
+  "interpretation": "Descriptive marginal audits on one cohort; not held-out model performance. Path differences quantify information discarded by 20 Hz resampling. Trial duration and click counts are not direct Mouse2Vec encoder inputs."
+}

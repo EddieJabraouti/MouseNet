@@ -1,0 +1,34 @@
+{
+  "seed": 20260924,
+  "replicas_per_source": 2,
+  "n_source_participants": 74,
+  "n_synthetic_profiles": 148,
+  "n_synthetic_trials": 2960,
+  "n_synthetic_windows": 52623,
+  "age_bounds_years": [
+    55,
+    90
+  ],
+  "age_shift_max_years": 2,
+  "education_bounds_years": [
+    7,
+    20
+  ],
+  "education_shift_max_years": 1,
+  "sex_rule": "unchanged from source",
+  "group_rule": "inherited from source",
+  "trajectory_rule": "monotone global duration scale 0.98-1.02; smooth Gaussian x/y jitter sigma 0.002 only at moving samples; coordinates clipped to [0,1]; button states copied",
+  "duration_scale_range_observed": [
+    0.9800181417622843,
+    1.0199937299053665
+  ],
+  "encoder_inference": "frozen checkpoint with corrected token-axis modality embeddings",
+  "raw_format": "Concatenated arrays; trial_offsets[i]:trial_offsets[i+1] yields synthetic raw trajectory i; x/y normalized to screen, timestamps relative seconds",
+  "raw_sha256": "aba37b9265a1862f7bfc48dff52dd538fc4dbd68e0a27f81c2e332707e470b35",
+  "embeddings_sha256": "f2bec604bc5396e192403d166f2ec5146c3502eb0b96db20ff41d7d88c11eb69",
+  "class_counts_profiles": {
+    "0": 66,
+    "1": 82
+  },
+  "warning": "Augmented descendants are correlated with their source and may not preserve every cognitive signal. Hold out real participants and all descendants together. Do not score synthetic profiles as independent test cases."
+}

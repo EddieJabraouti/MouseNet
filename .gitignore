@@ -1,1 +1,6 @@
 /data
+.venv/
+.uv-cache/
+__pycache__/
+
+/mouse2vec

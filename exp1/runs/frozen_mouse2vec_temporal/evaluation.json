@@ -1,0 +1,257 @@
+{
+  "model": "frozen Mouse2Vec; GRU over each trial's ordered windows; GRU over 20 ordered trials; participant-level binary loss",
+  "architecture": {
+    "hidden_size": 8,
+    "dropout": 0.25,
+    "trainable_parameters_mouse": 3753,
+    "trainable_parameters_combined": 3756
+  },
+  "training": {
+    "epochs_fixed": 50,
+    "learning_rate": 0.002,
+    "weight_decay": 0.02,
+    "batch_size": 12,
+    "primary_seed": 42,
+    "sensitivity_seeds": [
+      43,
+      44
+    ],
+    "class_balancing": "training-fold BCE positive weight = n_controls/n_mci"
+  },
+  "validation": "one outer stratified 5-fold split by participant; no model/hyperparameter selection on held-out folds; primary seed reported, other seeds shown separately for sensitivity; no embedding or prediction averaging",
+  "controls": "demographics-only class-balanced logistic regression; mouse-only same GRU head without demographics; combined GRU head with age, sex, education",
+  "n_participants": 74,
+  "class_counts": {
+    "0": 33,
+    "1": 41
+  },
+  "n_trials": 1480,
+  "n_windows": 26655,
+  "folds": [
+    {
+      "fold": 1,
+      "n_controls": 7,
+      "n_mci": 8,
+      "age_mean_controls": 67.0,
+      "age_mean_mci": 76.0,
+      "scores": {
+        "mouse": {
+          "auroc": 0.32142857142857145,
+          "balanced_accuracy": 0.39285714285714285
+        },
+        "demographics": {
+          "auroc": 0.75,
+          "balanced_accuracy": 0.6071428571428572
+        },
+        "combined": {
+          "auroc": 0.3035714285714286,
+          "balanced_accuracy": 0.33035714285714285
+        }
+      },
+      "training_auroc_descriptive": {
+        "demographics": 0.5524475524475524,
+        "mouse": 1.0,
+        "combined": 1.0
+      },
+      "seed_auroc": {
+        "mouse": {
+          "42": 0.32142857142857145,
+          "43": 0.3214285714285715,
+          "44": 0.3392857142857143
+        },
+        "combined": {
+          "42": 0.3035714285714286,
+          "43": 0.44642857142857145,
+          "44": 0.2857142857142857
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "n_controls": 7,
+      "n_mci": 8,
+      "age_mean_controls": 75.57142639160156,
+      "age_mean_mci": 75.125,
+      "scores": {
+        "mouse": {
+          "auroc": 0.3035714285714286,
+          "balanced_accuracy": 0.4464285714285714
+        },
+        "demographics": {
+          "auroc": 0.4285714285714286,
+          "balanced_accuracy": 0.39285714285714285
+        },
+        "combined": {
+          "auroc": 0.375,
+          "balanced_accuracy": 0.45535714285714285
+        }
+      },
+      "training_auroc_descriptive": {
+        "demographics": 0.6585081585081585,
+        "mouse": 1.0,
+        "combined": 1.0
+      },
+      "seed_auroc": {
+        "mouse": {
+          "42": 0.3035714285714286,
+          "43": 0.5535714285714286,
+          "44": 0.23214285714285718
+        },
+        "combined": {
+          "42": 0.375,
+          "43": 0.48214285714285715,
+          "44": 0.3214285714285714
+        }
+      }
+    },
+    {
+      "fold": 3,
+      "n_controls": 7,
+      "n_mci": 8,
+      "age_mean_controls": 75.85713958740234,
+      "age_mean_mci": 78.25,
+      "scores": {
+        "mouse": {
+          "auroc": 0.7142857142857143,
+          "balanced_accuracy": 0.6696428571428572
+        },
+        "demographics": {
+          "auroc": 0.3392857142857143,
+          "balanced_accuracy": 0.45535714285714285
+        },
+        "combined": {
+          "auroc": 0.625,
+          "balanced_accuracy": 0.7410714285714286
+        }
+      },
+      "training_auroc_descriptive": {
+        "demographics": 0.6684149184149183,
+        "mouse": 0.9988344988344988,
+        "combined": 1.0
+      },
+      "seed_auroc": {
+        "mouse": {
+          "42": 0.7142857142857143,
+          "43": 0.8035714285714285,
+          "44": 0.48214285714285715
+        },
+        "combined": {
+          "42": 0.625,
+          "43": 0.7142857142857143,
+          "44": 0.41071428571428575
+        }
+      }
+    },
+    {
+      "fold": 4,
+      "n_controls": 6,
+      "n_mci": 9,
+      "age_mean_controls": 72.66666412353516,
+      "age_mean_mci": 77.77777862548828,
+      "scores": {
+        "mouse": {
+          "auroc": 0.5555555555555556,
+          "balanced_accuracy": 0.4722222222222222
+        },
+        "demographics": {
+          "auroc": 0.6203703703703705,
+          "balanced_accuracy": 0.5277777777777778
+        },
+        "combined": {
+          "auroc": 0.5,
+          "balanced_accuracy": 0.41666666666666663
+        }
+      },
+      "training_auroc_descriptive": {
+        "demographics": 0.6001157407407407,
+        "mouse": 0.9918981481481481,
+        "combined": 0.9976851851851852
+      },
+      "seed_auroc": {
+        "mouse": {
+          "42": 0.5555555555555556,
+          "43": 0.2962962962962963,
+          "44": 0.48148148148148145
+        },
+        "combined": {
+          "42": 0.5,
+          "43": 0.46296296296296297,
+          "44": 0.5185185185185185
+        }
+      }
+    },
+    {
+      "fold": 5,
+      "n_controls": 6,
+      "n_mci": 8,
+      "age_mean_controls": 72.33333587646484,
+      "age_mean_mci": 72.375,
+      "scores": {
+        "mouse": {
+          "auroc": 0.5416666666666667,
+          "balanced_accuracy": 0.6458333333333333
+        },
+        "demographics": {
+          "auroc": 0.5208333333333333,
+          "balanced_accuracy": 0.4375
+        },
+        "combined": {
+          "auroc": 0.5625,
+          "balanced_accuracy": 0.5833333333333333
+        }
+      },
+      "training_auroc_descriptive": {
+        "demographics": 0.633557800224467,
+        "mouse": 0.9966329966329966,
+        "combined": 1.0
+      },
+      "seed_auroc": {
+        "mouse": {
+          "42": 0.5416666666666667,
+          "43": 0.7083333333333333,
+          "44": 0.22916666666666669
+        },
+        "combined": {
+          "42": 0.5625,
+          "43": 0.7916666666666667,
+          "44": 0.2916666666666667
+        }
+      }
+    }
+  ],
+  "summary": {
+    "mouse": {
+      "mean_fold_auroc": 0.48730158730158735,
+      "mean_fold_balanced_accuracy": 0.5253968253968253,
+      "pooled_oof_auroc_descriptive": 0.48632668144863267,
+      "age_matched_pairs_within_5_years": {
+        "correct_pairs": 47.0,
+        "total_pairs": 98,
+        "concordance": 0.47959183673469385
+      }
+    },
+    "demographics": {
+      "mean_fold_auroc": 0.5318121693121693,
+      "mean_fold_balanced_accuracy": 0.4841269841269841,
+      "pooled_oof_auroc_descriptive": 0.5140428677014043,
+      "age_matched_pairs_within_5_years": {
+        "correct_pairs": 37.5,
+        "total_pairs": 98,
+        "concordance": 0.3826530612244898
+      }
+    },
+    "combined": {
+      "mean_fold_auroc": 0.47321428571428575,
+      "mean_fold_balanced_accuracy": 0.5053571428571428,
+      "pooled_oof_auroc_descriptive": 0.4619364375461936,
+      "age_matched_pairs_within_5_years": {
+        "correct_pairs": 41.0,
+        "total_pairs": 98,
+        "concordance": 0.41836734693877553
+      }
+    }
+  },
+  "mouse_features_sha256": "1dc0689e1e28d76d323b001cb58b74cf0476d495b3d48aa7476d0241c640e26e",
+  "demographics_sha256": "0caed661f2207ad1a97a6a4900e8f96c0b552896eaae1a4b094082f253b96ea8",
+  "cautions": "Exploratory reuse of the same 74-person cohort and outer split as prior experiments. Age-matched pairs are correlated, not independent subjects; they are a diagnostic rather than an external test. No model was selected by this outer result."
+}

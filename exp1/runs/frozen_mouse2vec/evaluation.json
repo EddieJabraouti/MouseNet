@@ -1,0 +1,29 @@
+{
+  "protocol": "outer leave-one-participant-out; inner stratified 10-fold AUROC tuning",
+  "model": "StandardScaler + class-balanced L2 logistic regression",
+  "feature_definition": "mean of window embeddings per trial; mean of 10 trials per A/B; concatenate A and B",
+  "selection": "one prespecified model family; C in [0.01, 0.1, 1, 10] selected on inner folds only",
+  "decision_threshold": 0.5,
+  "n_participants": 74,
+  "class_counts": {
+    "0": 33,
+    "1": 41
+  },
+  "auroc": 0.4811529933481153,
+  "auroc_bootstrap_95pct": [
+    0.34959349593495936,
+    0.6164264597191424
+  ],
+  "balanced_accuracy": 0.47117516629711753,
+  "balanced_accuracy_bootstrap_95pct": [
+    0.352910199556541,
+    0.589430894308943
+  ],
+  "sensitivity": 0.4878048780487805,
+  "specificity": 0.4545454545454546,
+  "brier_score": 0.27225821072873085,
+  "final_model_C": 0.01,
+  "bootstrap_note": "Stratified participant bootstrap of fixed out-of-fold predictions; excludes model-refit uncertainty.",
+  "validation_note": "Internal nested cross-validation; no independent external test cohort.",
+  "numeric_note": "macOS Accelerate matmul warnings filtered after finite-input and explicit-dot agreement checks."
+}
