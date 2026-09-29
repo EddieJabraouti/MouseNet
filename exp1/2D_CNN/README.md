@@ -1,0 +1,1 @@
+2D CNN: turn raw coordinating data in pixel wise signature heat map in which the CNN learns this per observation representation and achieves the same objective as standard TypeNet(biometric authentication)
